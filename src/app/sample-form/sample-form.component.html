@@ -1,0 +1,70 @@
+<div class="container">
+<form [formGroup]="carForm" (ngSubmit)="btnSubmit()">
+    <div>
+        <label for="carID">Car ID</label><br>
+        <input class="form-control" id="carID" type="number" formControlName="carID">
+    </div>
+    <div>
+        <label for="carMake">Car Make</label><br>
+        <input class="form-control" id="carMake" type="text" formControlName="carMake">
+    </div>
+    <div>
+        <label for="carModel">Car Model</label><br>
+        <input class="form-control" id="carModel" type="text" formControlName="carModel">
+    </div>
+    <div id="typeOfFuel">
+        <label for="fuelType">Fuel Type</label><br>
+        <input class="form-control" id="fuelType" type="text" formControlName="fuelType">
+    </div>
+    <div id="yearOfCar">
+        <label for="carYear">Year of Car</label><br>
+        <input class="form-control" id="carYear" type="number" formControlName="carYear">
+    </div>
+    <div id="countryOfOrigin">
+        <label for="carCountry">Country of Origin</label><br>
+        <input class="form-control" id="carCountry" type="text" formControlName="carCountry">
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button id="delete" class="btn btn-danger" type="button">Delete</button>
+    <button id="update" class="btn btn-success" type="button">Update</button>
+
+    <div id="displayFloatRight">
+    <p>Car ID: {{carForm.value["carID"]}}</p>
+    <p>Car Make: {{carForm.value["carMake"]}}</p>
+    <p>Car Model: {{carForm.value["carModel"]}}</p>
+    <p>Fuel Type: {{carForm.value["fuelType"]}}</p>
+    <p>Year of Car: {{carForm.value["carYear"]}}</p>
+    <p>Country of Origin: {{carForm.value["carCountry"]}}</p>
+    </div>
+    <br>
+    <br>
+    <p *ngIf="showMyMessage">Car has been submitted</p>
+
+    <div *ngIf="carID.invalid && carID.touched" class="alert alert-danger">
+        Car ID is required and must be at least 1 character
+    </div>
+    <div *ngIf="carMake.invalid && carMake.touched" class="alert alert-danger">
+        Car make is required
+    </div>
+    <div *ngIf="carModel.invalid && carModel.touched" class="alert alert-danger">
+        Car model is required
+    </div>
+    <div *ngIf="fuelType.invalid && fuelType.touched" class="alert alert-danger">
+        Fuel type is required
+    </div>
+    <div *ngIf="carYear.invalid && carYear.touched" class="alert alert-danger">
+        Year of car must be at least 4 numbers
+    </div>
+    <div *ngIf="carCountry.invalid && carCountry.touched" class="alert alert-danger">
+        Country of Origin is required
+    </div>
+</form>
+</div>
+
+<div class="container">
+    <app-car-list></app-car-list>
+</div>
+
+<!--Testing-->
+<!--Testing-->

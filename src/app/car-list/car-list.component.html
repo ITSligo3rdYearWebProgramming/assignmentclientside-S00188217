@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <app-car-display (ID)="displayCar($event)"></app-car-display>
+        </div>
+        <div class="col-sm-6">
+            <app-sample-form></app-sample-form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            ID
+        </div>
+        <div class="col">
+            Make
+        </div>
+        <div class="col">
+            Model
+        </div>
+        <div class="col">
+            Fuel Type
+        </div>
+        <div class="col">
+            Year of Car
+        </div>
+        <div class="col">
+            Country of Origin
+        </div>
+    </div>
+    <div *ngFor="let car of cars">
+        <app-car-component [car]="car"></app-car-component>
+    </div>
+</div>
