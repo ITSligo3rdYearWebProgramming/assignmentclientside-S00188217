@@ -1,6 +1,6 @@
 export interface carModel {
     carID: number,
-    makeOfCar: string,
+    carMake: string,
     carModel: string,
     fuelType: string,
     carYear: number,

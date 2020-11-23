@@ -8,15 +8,15 @@ import { carModel } from 'carModel'
 })
 export class carService {
 
-  myAPI:string = "http://localhost:4200"
+  myAPI:string = "http://localhost:3000"
 
   constructor(private http: HttpClient) { }
 
-  readCar(ID:string) : Observable <carModel> {
-    return this.http.get<carModel>(`${this.myAPI}/cars/${ID}`)
-}
+  readCars() : Observable <carModel[]> {
+    return this.http.get<carModel[]>(`${this.myAPI}/cars`)
+  }
 
-addCar(cars: carModel): Observable <carModel> {
-    return this.http.post<carModel>(`${this.myAPI}/cars`, cars)
-}
+  addCar(cars: carModel): Observable <carModel> {
+      return this.http.post<carModel>(`${this.myAPI}/cars`, cars)
+  }
 }

@@ -1,1 +1,25 @@
-<p>car-list works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            ID
+        </div>
+        <div class="col">
+            Make
+        </div>
+        <div class="col">
+            Model
+        </div>
+        <div class="col">
+            Fuel Type
+        </div>
+        <div class="col">
+            Year
+        </div>
+        <div class="col">
+            Country of Origin
+        </div>
+    </div> 
+    <div *ngFor="let car of cars">
+        <app-car-component [car]="car"></app-car-component>
+    </div>
+</div>
