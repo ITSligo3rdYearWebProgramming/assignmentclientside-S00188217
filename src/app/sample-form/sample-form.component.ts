@@ -1,6 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { carService } from '../car-service.service';
+import { carService } from './../car-service.service';
 
 @Component({
   selector: 'app-sample-form',
@@ -29,7 +29,9 @@ export class SampleFormComponent implements OnInit {
 
   message: string = "";
 
-  onCreate() {
+  public showMyMessage = false
+
+  btnSubmit() {
     console.log(`Welcome to CarDB` + JSON.stringify(this.carForm.value));
     this.carservice.addCar(this.carForm.value)
     .subscribe({
@@ -62,12 +64,5 @@ export class SampleFormComponent implements OnInit {
 
   get carCountry() {
     return this.carForm.get('carCountry');
-  }
-
-  public showMyMessage = false
-
-  btnSubmit() {
-
-    this.showMyMessage = true
   }
 }

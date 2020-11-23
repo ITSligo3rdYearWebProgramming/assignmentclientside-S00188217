@@ -1,0 +1,39 @@
+.form-control {
+    width: 250px;
+}
+
+#yearOfCar {
+    float: right;
+    position: absolute;
+    top: 260px;
+    right: 650px;
+}
+
+#typeOfFuel {
+    float: right;
+    position: absolute;
+    top: 180px;
+    right: 650px;
+}
+
+#countryOfOrigin {
+    float: right;
+    position: absolute;
+    top: 340px;
+    right: 650px;
+}
+
+#displayFloatRight {
+    float: right;
+    position: absolute;
+    top: 180px;
+    right: 300px;
+}
+
+#delete {
+    margin-left: 20px;
+}
+
+#update {
+    margin-left: 20px;
+}

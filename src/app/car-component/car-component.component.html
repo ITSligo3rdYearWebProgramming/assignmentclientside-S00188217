@@ -1,25 +1,22 @@
-<div class="container">
+<div>
     <div class="row">
         <div class="col">
-            ID
+            {{car.carID}}
         </div>
         <div class="col">
-            Make
+            {{car.carMake}}
         </div>
         <div class="col">
-            Model
+            {{car.carModel}}
         </div>
         <div class="col">
-            Fuel Type
+            {{car.fuelType}}
         </div>
         <div class="col">
-            Year
+            {{car.carYear}}
         </div>
         <div class="col">
-            Country of Origin
+            {{car.carCountry}}
         </div>
     </div> 
-    <div *ngFor="let car of cars">
-        <app-car-component [car]="car"></app-car-component>
-    </div>
 </div>
