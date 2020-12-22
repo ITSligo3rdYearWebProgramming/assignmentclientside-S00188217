@@ -1,11 +1,4 @@
-<body>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="YoKiWcQe"></script>
-
-<div class="fb-login-button" data-width="400" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="true"></div>
-
-
-
+<button (click)="facebookLogin()">Login with Facebook</button>
 
 <div class="container">
     <form [formGroup]="authForm" (ngSubmit)="btnSubmit()">
@@ -15,4 +8,3 @@
         </div>
     </form>
 </div>
-</body>

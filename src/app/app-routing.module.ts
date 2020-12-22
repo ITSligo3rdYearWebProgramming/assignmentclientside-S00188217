@@ -1,23 +1,12 @@
-import { SampleFormComponent } from './sample-form/sample-form.component';
-import { AuthPageComponent } from './auth-page/auth-page.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [
-  {
-    path: 'auth',
-    component: AuthPageComponent
-  },
-  {
-    path: 'form',
-    component: SampleFormComponent
-  }
-];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
 })
 export class AppRoutingModule { }
-export const routingComponents = [AuthPageComponent, SampleFormComponent]

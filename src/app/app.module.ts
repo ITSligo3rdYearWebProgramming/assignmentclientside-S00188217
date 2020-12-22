@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
@@ -11,10 +11,15 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarComponentComponent } from './car-component/car-component.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 
+// Facebook Login
+import { SocialLoginModule, AuthServiceConfig } from 'angular5-social-login';
+import { FacebookLoginProvider } from 'angular5-social-login';
+
+import { getAuthServiceConfigs } from './socialloginConfig';
+
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
     SampleFormComponent,
     CarListComponent,
     CarComponentComponent,
@@ -26,9 +31,14 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
