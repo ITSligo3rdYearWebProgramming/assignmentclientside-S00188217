@@ -62,8 +62,12 @@ input[type=submit] {
 }
 
 #orText {
-    margin-left: 39%;
+    margin-left: 43%;
     margin-right: 0%;
+}
+
+#signIn {
+  margin-left: 37%;
 }
 
 #orTextContainer {
