@@ -1,12 +1,8 @@
-import { Observable } from 'rxjs';
-import {Http, Response, RequestOptions, Headers} from '@angular/http';
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { carService } from './../car-service.service';
-import { AuthService as MyService } from '../auth.service';
 
 // Facebook Login
-import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular5-social-login';
+import { AuthService, FacebookLoginProvider, SocialUser } from 'angular5-social-login';
 
 @Component({
   selector: 'app-auth-page',
@@ -15,7 +11,27 @@ import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular
 })
 export class AuthPageComponent implements OnInit {
 
+  user: SocialUser;
+  loggedIn: boolean;
+
+  constructor(private authService: AuthService) {
+
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
+
   ngOnInit(): void {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log(this.user);
+    });
   }
 
   authForm = new FormGroup({
@@ -25,18 +41,4 @@ export class AuthPageComponent implements OnInit {
   btnSubmit() {
     console.log("Hello")
   }
-
-  carservice : carService
-
-  constructor(private socialAuthService: AuthService, private http: Http) {}
-
-  public facebookLogin() {
-    let socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-    this.socialAuthService.signIn(socialPlatformProvider).then(
-      (userData) => {
-            //this will return user data from facebook. What you need is a user token which you will send it to the server
-            this.sendToRestApiMethod(userData.token);
-       }
-    );
-}
 }

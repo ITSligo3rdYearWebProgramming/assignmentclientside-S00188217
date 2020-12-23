@@ -1,0 +1,33 @@
+<!-- <div class="container">
+<button type="button" class="btn btn-primary"><a style = "color:white;" href =  {{facebookLoginUrl}}>
+  Login with Facebook
+</a></button>
+</div> -->
+
+<body>  
+  <div class="container" id="facebookContainer">
+    <div class="col">
+      <a href={{facebookLoginUrl}}>
+      <button type="button" class="fb btn">
+        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+      </button>
+    </a>
+        </div>
+    </div>
+  
+    <div class="container" id="orTextContainer">
+        <div class="row">
+            <h4 id="orText">----------or----------</h4>
+        </div>
+        <div class="row">
+            <h6 id="orText">Sign in with e-mail and password</h6>
+        </div>
+    </div>
+            
+    <div class="container">
+        <input id="inputs" type="text" name="username" placeholder="E-Mail" required>
+        <input id="inputs" type="password" name="password" placeholder="Password" required>
+        <br><br>
+        <input id="inputs" type="submit" value="Login">
+    </div>
+  </body>

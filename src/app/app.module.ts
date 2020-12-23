@@ -10,12 +10,7 @@ import { SampleFormComponent } from './sample-form/sample-form.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarComponentComponent } from './car-component/car-component.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
-
-// Facebook Login
-import { SocialLoginModule, AuthServiceConfig } from 'angular5-social-login';
-import { FacebookLoginProvider } from 'angular5-social-login';
-
-import { getAuthServiceConfigs } from './socialloginConfig';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +18,8 @@ import { getAuthServiceConfigs } from './socialloginConfig';
     SampleFormComponent,
     CarListComponent,
     CarComponentComponent,
-    AuthPageComponent
+    AuthPageComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,12 +28,8 @@ import { getAuthServiceConfigs } from './socialloginConfig';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    SocialLoginModule
-  ],
+    ],
   providers: [
-    {
-      provide: AuthServiceConfig,useFactory: getAuthServiceConfigs
-    }
   ],
   bootstrap: [AppComponent]
 })
