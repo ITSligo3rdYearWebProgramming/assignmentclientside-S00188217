@@ -1,5 +1,6 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service'
 
 // Facebook Login
 import * as queryString from 'query-string';
@@ -19,7 +20,7 @@ export class AuthenticationComponent implements OnInit {
 
   ngOnInit(): void {
       const stringifiedParams = queryString.stringify({
-        client_ID: '078a20bf39a651151c45e1ca52c4cdf4',
+        client_ID: 3625264914207772,
         redirect_uri: 'https://localhost:8080/authenticate/facebook',
         scope: ['email', 'user_friends'].join(','),
         response_type: 'code',

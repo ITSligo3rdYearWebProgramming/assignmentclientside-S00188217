@@ -1,5 +1,7 @@
+import { UserService } from './user.service';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarComponentComponent } from './car-component/car-component.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { appInitializer } from './helpers/app.initialiser';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +31,15 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
     ],
   providers: [
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: appInitializer,
+    //   multi: true,
+    //   deps: [UserService]
+    // },
   ],
   bootstrap: [AppComponent]
 })
